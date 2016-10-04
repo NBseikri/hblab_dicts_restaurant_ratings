@@ -9,7 +9,7 @@ def clean_file(path):
 
 
 def mk_dict(path):
-    """Creates dictionary of restuarant ratings"""
+    """Creates dictionary of restaurant ratings"""
     split_line = clean_file(path)
     new_dict = {}
     for item in split_line:
@@ -17,11 +17,22 @@ def mk_dict(path):
     return new_dict
 
 
-def sort_rating(path):
+def print_sorted_ratings(path):
     """Uses dictionary keys and values for alphabetized reviews"""
     rest_rating = mk_dict(path)
     sorted_ratings = sorted(rest_rating.keys())
     for key in sorted_ratings:
         print '%s is rated at %s.' % (key, rest_rating[key])
 
-sort_rating('scores.txt')
+# sort_rating('scores.txt')
+
+def add_rating(path):
+    rest_rating = mk_dict(path)
+    restaurant = raw_input("Please add a restaurant.")
+    rating = int(raw_input("How would you rate this restaurant?"))
+    rest_rating[restaurant] = rating 
+    return rest_rating
+
+print add_rating('scores.txt')
+
+
