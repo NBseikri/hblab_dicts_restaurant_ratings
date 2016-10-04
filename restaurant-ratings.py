@@ -29,8 +29,7 @@ def print_sorted_ratings(path):
 def add_rating(path):
     rest_rating = mk_dict(path)
     restaurant = raw_input("Please add a restaurant.")
-    rating = int(raw_input("How would you rate this restaurant?"))
-    rest_rating[restaurant] = rating 
+    rest_rating[restaurant] = int(raw_input("How would you rate this restaurant?")) 
     return rest_rating
 
 print add_rating('scores.txt')
